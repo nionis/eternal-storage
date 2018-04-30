@@ -1,0 +1,2 @@
+- unique keys accross stores
+- strings store
