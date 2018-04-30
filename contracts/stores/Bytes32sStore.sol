@@ -1,6 +1,5 @@
 pragma solidity 0.4.23;
 
-import "zeppelin-solidity/contracts/ownership/rbac/RBAC.sol";
 import "solidity-utils/contracts/FromBytes32.sol";
 
 
