@@ -1,7 +1,7 @@
 {
-  "name": "generic-storage",
+  "name": "eternal-storage",
   "version": "1.0.0",
-  "description": "Simple generic storage for solidity",
+  "description": "Eternal storage with RBAC",
   "author": "Steven Noni",
   "license": "ISC",
   "dependencies": {
