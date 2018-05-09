@@ -16,8 +16,10 @@ contract("EternalStoreManaged", accounts => {
   let updateFn;
   let removeFn;
 
+  const createStore = () => EternalStoreManaged.new(true, true);
+
   before(async () => {
-    store = await EternalStoreManaged.new();
+    store = await createStore();
 
     const [_RBACStore, _fnStore, _keysStore, _createFn, _updateFn, _removeFn] = await Promise.all([
       store.STORE_RBAC(),
@@ -36,7 +38,7 @@ contract("EternalStoreManaged", accounts => {
   });
 
   beforeEach(async () => {
-    store = await EternalStoreManaged.new();
+    store = await createStore();
   });
 
   describe("single", async () => {

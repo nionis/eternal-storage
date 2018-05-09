@@ -1,9 +1,6 @@
 pragma solidity 0.4.23;
 
-import "solidity-utils/contracts/FromBytes32.sol";
 
-
-// simple store
 contract Uint256sStore {
   mapping (bytes32 => uint256) private uint256s;
 
@@ -76,26 +73,6 @@ contract Uint256sStore {
     
     return result;
   }
-  
-  function _readUint256s5(bytes32[] keys) internal view returns (uint256[5]) {
-    uint256[5] memory result;
-    
-    for (uint256 i = 0; i < keys.length; i++) {
-      result[i] = _readUint256(keys[i]);
-    }
-    
-    return result;
-  }
-  
-  function _readUint256s10(bytes32[] keys) internal view returns (uint256[10]) {
-    uint256[10] memory result;
-    
-    for (uint256 i = 0; i < keys.length; i++) {
-      result[i] = _readUint256(keys[i]);
-    }
-    
-    return result;
-  }
 
   // external
   function createUint256(bytes32 key, uint256 value) external returns (bool) {
@@ -128,13 +105,5 @@ contract Uint256sStore {
   
   function readUint256s(bytes32[] keys) external view returns (uint256[]) {
     return _readUint256s(keys);
-  }
-  
-  function readUint256s5(bytes32[] keys) external view returns (uint256[5]) {
-    return _readUint256s5(keys);
-  }
-  
-  function readUint256s10(bytes32[] keys) external view returns (uint256[10]) {
-    return _readUint256s10(keys);
   }
 }

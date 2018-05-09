@@ -1,9 +1,6 @@
 pragma solidity 0.4.23;
 
-import "solidity-utils/contracts/FromBytes32.sol";
 
-
-// simple store
 contract AddressesStore {
   mapping (bytes32 => address) private addresses;
 
@@ -76,26 +73,6 @@ contract AddressesStore {
     
     return result;
   }
-  
-  function _readAddresses5(bytes32[] keys) internal view returns (address[5]) {
-    address[5] memory result;
-    
-    for (uint256 i = 0; i < keys.length; i++) {
-      result[i] = _readAddress(keys[i]);
-    }
-    
-    return result;
-  }
-  
-  function _readAddresses10(bytes32[] keys) internal view returns (address[10]) {
-    address[10] memory result;
-    
-    for (uint256 i = 0; i < keys.length; i++) {
-      result[i] = _readAddress(keys[i]);
-    }
-    
-    return result;
-  }
 
   // external
   function createAddress(bytes32 key, address value) external returns (bool) {
@@ -128,13 +105,5 @@ contract AddressesStore {
   
   function readAddresses(bytes32[] keys) external view returns (address[]) {
     return _readAddresses(keys);
-  }
-  
-  function readAddresses5(bytes32[] keys) external view returns (address[5]) {
-    return _readAddresses5(keys);
-  }
-  
-  function readAddresses10(bytes32[] keys) external view returns (address[10]) {
-    return _readAddresses10(keys);
   }
 }

@@ -1,4 +1,3 @@
-/* solhint-disable */
 pragma solidity 0.4.23;
 
 import "solidity-utils/contracts/FromString.sol";
@@ -19,7 +18,7 @@ contract StoreRBAC {
   event RoleAdded(string storeName, address addr, bytes32 role);
   event RoleRemoved(string storeName, address addr, bytes32 role);
 
-  constructor() public {
+  function StoreRBAC() public {
     addRole(STORE_RBAC, msg.sender, RBAC_ROLE_ADMIN);   
   }
 
