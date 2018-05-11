@@ -8,7 +8,7 @@ contract Uint256sStoreManaged is Uint256sStore, FullProtection {
   bool public fnProtection = true;
   bool public keyProtection = true;
 
-  function Uint256sStoreManaged(bool _fnProtection, bool _keyProtection) public {
+  constructor(bool _fnProtection, bool _keyProtection) public {
     fnProtection = _fnProtection;
     keyProtection = _keyProtection;
   }

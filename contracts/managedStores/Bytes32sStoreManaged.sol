@@ -8,7 +8,7 @@ contract Bytes32sStoreManaged is Bytes32sStore, FullProtection {
   bool public fnProtection = true;
   bool public keyProtection = true;
 
-  function Bytes32sStoreManaged(bool _fnProtection, bool _keyProtection) public {
+  constructor(bool _fnProtection, bool _keyProtection) public {
     fnProtection = _fnProtection;
     keyProtection = _keyProtection;
   }

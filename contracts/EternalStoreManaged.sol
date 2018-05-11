@@ -8,8 +8,7 @@ import "./managedStores/Uint256sStoreManaged.sol";
 
 
 contract EternalStoreManaged is AddressesStoreManaged, BoolsStoreManaged, Bytes32sStoreManaged, Int256sStoreManaged, Uint256sStoreManaged {
-  function EternalStoreManaged(bool _fnProtection, bool _keyProtection)
-  public
+  constructor(bool _fnProtection, bool _keyProtection) public
   AddressesStoreManaged(_fnProtection, _keyProtection)
   BoolsStoreManaged(_fnProtection, _keyProtection)
   Bytes32sStoreManaged(_fnProtection, _keyProtection)

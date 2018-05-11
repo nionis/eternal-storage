@@ -1,15 +1,14 @@
 pragma solidity 0.4.23;
 
-import "solidity-utils/contracts/FromString.sol";
 import "./StoreRBAC.sol";
 
 
 // store protection functions
 contract FunctionProtection is StoreRBAC { 
   // standard roles
-  bytes32 constant public FN_ROLE_CREATE = FromString.toBytes32("create");
-  bytes32 constant public FN_ROLE_UPDATE = FromString.toBytes32("update");
-  bytes32 constant public FN_ROLE_REMOVE = FromString.toBytes32("remove");
+  bytes32 constant public FN_ROLE_CREATE = 0x6372656174650000000000000000000000000000000000000000000000000000; // create
+  bytes32 constant public FN_ROLE_UPDATE = 0x7570646174650000000000000000000000000000000000000000000000000000; // update
+  bytes32 constant public FN_ROLE_REMOVE = 0x72656d6f76650000000000000000000000000000000000000000000000000000; // remove
 
   function canCreate() internal view returns (bool) {
     return hasRole(STORE_FUNCTIONS, msg.sender, FN_ROLE_CREATE);

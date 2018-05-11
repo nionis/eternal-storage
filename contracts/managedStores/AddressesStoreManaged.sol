@@ -8,7 +8,7 @@ contract AddressesStoreManaged is AddressesStore, FullProtection {
   bool public fnProtection = true;
   bool public keyProtection = true;
 
-  function AddressesStoreManaged(bool _fnProtection, bool _keyProtection) public {
+  constructor(bool _fnProtection, bool _keyProtection) public {
     fnProtection = _fnProtection;
     keyProtection = _keyProtection;
   }

@@ -8,7 +8,7 @@ contract BoolsStoreManaged is BoolsStore, FullProtection {
   bool public fnProtection = true;
   bool public keyProtection = true;
 
-  function BoolsStoreManaged(bool _fnProtection, bool _keyProtection) public {
+  constructor(bool _fnProtection, bool _keyProtection) public {
     fnProtection = _fnProtection;
     keyProtection = _keyProtection;
   }

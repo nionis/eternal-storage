@@ -1,7 +1,5 @@
 pragma solidity 0.4.23;
 
-import "solidity-utils/contracts/FromString.sol";
-
 
 contract StoreRBAC {
   // stores: storeName -> key -> addr -> isAllowed
@@ -12,14 +10,14 @@ contract StoreRBAC {
   string public constant STORE_FUNCTIONS = "functions";
   string public constant STORE_KEYS = "keys";
   // rbac roles
-  bytes32 public constant RBAC_ROLE_ADMIN = FromString.toBytes32("admin");
+  bytes32 public constant RBAC_ROLE_ADMIN = 0x61646d696e000000000000000000000000000000000000000000000000000000; // "admin"
 
   // events
   event RoleAdded(string storeName, address addr, bytes32 role);
   event RoleRemoved(string storeName, address addr, bytes32 role);
 
-  function StoreRBAC() public {
-    addRole(STORE_RBAC, msg.sender, RBAC_ROLE_ADMIN);   
+  constructor() public {
+    addRole(STORE_RBAC, msg.sender, RBAC_ROLE_ADMIN);
   }
 
   function hasRole(string storeName, address addr, bytes32 role) public view returns (bool) {
