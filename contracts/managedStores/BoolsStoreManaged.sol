@@ -1,10 +1,10 @@
 pragma solidity 0.4.23;
 
-import "../stores/BoolsStore.sol";
+import "../stores/BoolsStoreExternal.sol";
 import "../protections/FullProtection.sol";
 
 
-contract BoolsStoreManaged is BoolsStore, FullProtection {
+contract BoolsStoreManaged is BoolsStoreExternal, FullProtection {
   bool public fnProtection = true;
   bool public keyProtection = true;
 

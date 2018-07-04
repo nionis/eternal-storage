@@ -4,7 +4,6 @@ pragma solidity 0.4.23;
 contract Bytes32sStore {
   mapping (bytes32 => bytes32) private bytes32s;
 
-  // core functions
   function _createBytes32(bytes32 key, bytes32 value) internal returns (bool) {
     if (bytes32s[key] != bytes32(0x0)) return false;
 
@@ -17,8 +16,8 @@ contract Bytes32sStore {
     bool success = true;
     
     for (uint256 i = 0; i < keys.length; i++) {
-       bool operationSuccess = _createBytes32(keys[i], values[i]);
-       if (success && !operationSuccess) success = false;
+      bool operationSuccess = _createBytes32(keys[i], values[i]);
+      if (success && !operationSuccess) success = false;
     }
     
     return success;
@@ -72,38 +71,5 @@ contract Bytes32sStore {
     }
     
     return result;
-  }
-
-  // external
-  function createBytes32(bytes32 key, bytes32 value) external returns (bool) {
-    return _createBytes32(key, value);
-  }
-  
-  function createBytes32s(bytes32[] keys, bytes32[] values) external returns (bool) {
-    return _createBytes32s(keys, values);
-  }
-  
-  function updateBytes32(bytes32 key, bytes32 value) external returns (bool) {
-    return _updateBytes32(key, value);   
-  }
-  
-  function updateBytes32s(bytes32[] keys, bytes32[] values) external returns (bool) {
-    return _updateBytes32s(keys, values);
-  }
-  
-  function removeBytes32(bytes32 key) external returns (bool) {
-    return _removeBytes32(key);
-  }
-  
-  function removeBytes32s(bytes32[] keys) external returns (bool) {
-    return _removeBytes32s(keys);
-  }
-
-  function readBytes32(bytes32 key) external view returns (bytes32) {
-    return _readBytes32(key);
-  }
-  
-  function readBytes32s(bytes32[] keys) external view returns (bytes32[]) {
-    return _readBytes32s(keys);
   }
 }

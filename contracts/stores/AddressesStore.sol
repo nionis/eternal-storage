@@ -4,7 +4,6 @@ pragma solidity 0.4.23;
 contract AddressesStore {
   mapping (bytes32 => address) private addresses;
 
-  // core functions
   function _createAddress(bytes32 key, address value) internal returns (bool) {
     if (addresses[key] != address(0x0)) return false;
 
@@ -17,8 +16,8 @@ contract AddressesStore {
     bool success = true;
     
     for (uint256 i = 0; i < keys.length; i++) {
-       bool operationSuccess = _createAddress(keys[i], values[i]);
-       if (success && !operationSuccess) success = false;
+      bool operationSuccess = _createAddress(keys[i], values[i]);
+      if (success && !operationSuccess) success = false;
     }
     
     return success;
@@ -72,38 +71,5 @@ contract AddressesStore {
     }
     
     return result;
-  }
-
-  // external
-  function createAddress(bytes32 key, address value) external returns (bool) {
-    return _createAddress(key, value);
-  }
-  
-  function createAddresses(bytes32[] keys, address[] values) external returns (bool) {
-    return _createAddresses(keys, values);
-  }
-  
-  function updateAddress(bytes32 key, address value) external returns (bool) {
-    return _updateAddress(key, value);   
-  }
-  
-  function updateAddresses(bytes32[] keys, address[] values) external returns (bool) {
-    return _updateAddresses(keys, values);
-  }
-  
-  function removeAddress(bytes32 key) external returns (bool) {
-    return _removeAddress(key);
-  }
-  
-  function removeAddresses(bytes32[] keys) external returns (bool) {
-    return _removeAddresses(keys);
-  }
-
-  function readAddress(bytes32 key) external view returns (address) {
-    return _readAddress(key);
-  }
-  
-  function readAddresses(bytes32[] keys) external view returns (address[]) {
-    return _readAddresses(keys);
   }
 }

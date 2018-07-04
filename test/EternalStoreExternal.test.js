@@ -3,13 +3,13 @@ const dummyItems = require("./helpers/dummyItems");
 const interactions = require("./helpers/interactions");
 const utils = require("./helpers/utils");
 
-const EternalStore = artifacts.require("EternalStore");
+const EternalStoreExternal = artifacts.require("EternalStoreExternal");
 
-contract("EternalStore", () => {
+contract("EternalStoreExternal", () => {
   let store;
 
   beforeEach(async () => {
-    store = await EternalStore.new();
+    store = await EternalStoreExternal.new();
   });
 
   describe("single", async () => {
