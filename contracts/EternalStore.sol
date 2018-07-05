@@ -1,4 +1,4 @@
-pragma solidity 0.4.23;
+pragma solidity ^0.4.23;
 
 import "./stores/AddressesStore.sol";
 import "./stores/BoolsStore.sol";

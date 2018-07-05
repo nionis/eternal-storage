@@ -3,6 +3,7 @@
   "rules": {
     "indent": ["warn", 2],
     "func-order": false,
-    "max-line-length": 200
+    "max-line-length": 200,
+    "compiler-fixed": false
   }
 }

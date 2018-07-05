@@ -1,4 +1,4 @@
-pragma solidity 0.4.23;
+pragma solidity ^0.4.23;
 
 import "../stores/BoolsStoreExternal.sol";
 import "../protections/FullProtection.sol";

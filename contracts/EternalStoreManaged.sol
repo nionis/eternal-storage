@@ -1,4 +1,4 @@
-pragma solidity 0.4.23;
+pragma solidity ^0.4.23;
 
 import "./managedStores/AddressesStoreManaged.sol";
 import "./managedStores/BoolsStoreManaged.sol";
